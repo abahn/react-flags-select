@@ -182,9 +182,36 @@ class Demo extends React.Component {
 							<Highlight lang={'js'} value={'<ReactFlagsSelect \n defaultCountry="US" \n showSelectedLabel={false} \n disabled={true}/>'} />
 						</div>
 						<ReactFlagsSelect
-					    defaultCountry="US"
-					    showSelectedLabel={false}
-					    disabled={true} />
+							defaultCountry="US"
+							showSelectedLabel={false}
+							disabled={true} />
+					</div>
+					<div className="demo-group">
+						<div className="demo-group-title">
+							<span>Limit of number of the displayed countries</span>
+						</div>
+						<div className="demo-source">
+							<Highlight lang={'js'} value={'<ReactFlagsSelect \n defaultCountry="US" \n showSelectedLabel={false} \n displayingLimit={4}/>'} />
+						</div>
+						<ReactFlagsSelect
+							defaultCountry="US"
+							showSelectedLabel={false}
+							searchable={true}
+							displayingLimit={4} />
+					</div>
+					<div className="demo-group">
+						<div className="demo-group-title">
+							<span>List of most relevant countries</span>
+						</div>
+						<div className="demo-source">
+							<Highlight lang={'js'} value={'<ReactFlagsSelect \n defaultCountry="US" \n showSelectedLabel={false} \n relevantCountries={["EE", "LV", "LT", "FI", "RU"]}/>'} />
+						</div>
+						<ReactFlagsSelect
+							defaultCountry="US"
+							showSelectedLabel={false}
+							searchable={true}
+							displayingLimit={5}
+							relevantCountries={['EE', 'LV', 'LT', 'FI', 'RU']} />
 					</div>
 				</div>
 			</div>
