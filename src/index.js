@@ -98,8 +98,14 @@ class ReactFlagsSelect extends Component {
     return result;
   }
 
-  componentDidMount() {
+  	componentDidMount() {
 		!this.props.disabled && window.addEventListener("click", this.closeOptions);
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.selected) {
+			this.updateSelected(nextProps.selected);
+		}
 	}
 
 	componentWillUnmount() {
@@ -186,7 +192,8 @@ ReactFlagsSelect.propsType = {
 	disabled: PropTypes.bool,
 	searchable: PropTypes.bool,
 	displayingLimit: PropTypes.number,
-	relevantCountries: PropTypes.arrayOf(PropTypes.string)
+	relevantCountries: PropTypes.arrayOf(PropTypes.string),
+	selected: PropTypes.string
 }
 
 export default ReactFlagsSelect;
